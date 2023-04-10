@@ -43,11 +43,14 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       itemCount: photolist.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          leading:CircleAvatar(backgroundImage: NetworkImage(snapshot.data![index].url.toString()),),
-                          subtitle: Text( snapshot.data![index].title),
-                          title: Text('id: '+ snapshot.data![index].id.toString())
-                          
-                           ,);
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                snapshot.data![index].url.toString()),
+                          ),
+                          subtitle: Text(snapshot.data![index].title),
+                          title: Text(
+                              'id: ' + snapshot.data![index].id.toString()),
+                        );
                       }),
                 );
               })
@@ -56,6 +59,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
     );
   }
 }
+
 // photos Model
 class Photos {
   String title, url;
