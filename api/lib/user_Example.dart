@@ -39,7 +39,7 @@ class _UserExampleState extends State<UserExample> {
           FutureBuilder(
             future: getuserModel(),
             builder: (context, AsyncSnapshot<List<UserModel>> snapshot) {
-              if (snapshot.hasData) {
+              if (!snapshot.hasData) {
                 return const CircularProgressIndicator();
               } else {
                 return Expanded(
@@ -51,6 +51,7 @@ class _UserExampleState extends State<UserExample> {
                             children: [
                               Row(
                                 children: [
+                                  Text('Name: '),
                                   Text(snapshot.data![index].name.toString())
                                 ],
                               )
