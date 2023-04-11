@@ -49,12 +49,10 @@ class _UserExampleState extends State<UserExample> {
                         return Card(
                           child: Column(
                             children: [
-                              Row(
-                                children: [
-                                  Text('Name: '),
-                                  Text(snapshot.data![index].name.toString())
-                                ],
-                              )
+                             ReusableRow(title: 'Name', value:snapshot.data![index].name.toString()),
+                             ReusableRow(title: 'Email', value:snapshot.data![index].email.toString()),
+                             ReusableRow(title: 'Company Name', value:snapshot.data![index].company!.name.toString()),
+                               
                             ],
                           ),
                         );
@@ -66,5 +64,25 @@ class _UserExampleState extends State<UserExample> {
         ],
       ),
     );
+  }
+}
+
+ 
+class ReusableRow extends StatelessWidget {
+   ReusableRow({Key? key, required this.title, 
+   required this.value}) : super(key: key);
+String title,value;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+        Text(title),
+        Text(value)
+      ],),
+    );
+    
   }
 }
