@@ -82,7 +82,8 @@ else{
                   })
                   )
                   ),
-                Icon(snapshot.data!.data![index].inWishlist! == true ? Icons.favorite :Icons.favorite_outline )
+                Icon(snapshot.data!.data![index].inWishlist! == true ? 
+                Icons.favorite :Icons.favorite_outline )
                 
                 ],);
               
